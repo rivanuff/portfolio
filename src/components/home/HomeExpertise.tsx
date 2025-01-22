@@ -32,7 +32,7 @@ export default function HomeExpertise() {
   );
 
   return (
-    <div className="bg-palette-6 text-palette-5 px-10 py-16 rounded-[20px] flex flex-col lg:flex-row w-full justify-between items-start">
+    <div className="bg-palette-6 text-palette-5 p-10 lg:py-16 rounded-[20px] gap-6 flex flex-col lg:flex-row w-full justify-between items-start">
       <h2 className="text-3xl lg:text-[50px] font-medium">{t("title")}</h2>
 
       <div className="overflow-hidden h-60 w-full lg:w-auto">
