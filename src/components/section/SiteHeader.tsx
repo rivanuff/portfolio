@@ -30,6 +30,7 @@ export default function SiteHeader() {
           {navItems.map((item) => (
             <li key={item.title} className="px-6 py-3">
               <Link
+                target="_blank"
                 href={item.url}
                 className="font-medium uppercase flex items-center gap-x-1"
               >

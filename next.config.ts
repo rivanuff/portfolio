@@ -4,7 +4,7 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
-  output: "standalone",
+  poweredByHeader: false,
 };
 
 export default withNextIntl(nextConfig);
