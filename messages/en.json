@@ -1,0 +1,15 @@
+{
+  "header": {
+    "cta": "Let's talk"
+  },
+  "home": {
+    "intro": {
+      "title": "I'm a full-stack web developer",
+      "description": "I also like creating content on the side :)",
+      "status": "Currently working part-time whilst taking on a MSc in Software Engineering"
+    },
+    "expertise": {
+      "title": "Expertise"
+    }
+  }
+}

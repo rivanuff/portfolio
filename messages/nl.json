@@ -1,0 +1,13 @@
+{
+  "header": {
+    "cta": "Let's talk"
+  },
+  "home": {
+    "title": "Ik ben een full-stack web developer",
+    "description": "Ik vind content maken daarnaast ook leuk :)",
+    "status": "Ik werk momenteel part-time whilst terwijl ik een MSc in Software Engineering volg"
+  },
+  "expertise": {
+    "title": "Expertise"
+  }
+}
