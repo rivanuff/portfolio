@@ -64,6 +64,9 @@ export default {
           6: "#A3C2DB",
         },
       },
+      boxShadow: {
+        card: "0 1px 5px 0 rgba(0, 0, 0, 0.1)",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

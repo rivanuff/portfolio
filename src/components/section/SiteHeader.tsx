@@ -1,8 +1,13 @@
+"use client";
+
+import { debounce } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 export default function SiteHeader() {
   const t = useTranslations("header");
+  const headerElement = useRef<HTMLDivElement>(null);
 
   const navItems = [
     {
@@ -19,9 +24,41 @@ export default function SiteHeader() {
     },
   ];
 
+  useEffect(() => {
+    const handleScroll = debounce(
+      () => {
+        if (headerElement.current) {
+          const classes = [
+            "shadow-card",
+            "lg:shadow-none",
+            "shadow-palette-2",
+            "scale-[102.5%]",
+            "lg:scale-100",
+          ];
+
+          if (window.scrollY > 0) {
+            headerElement.current.classList.add(...classes);
+          } else {
+            headerElement.current.classList.remove(...classes);
+          }
+        }
+      },
+      window.screen.width < 1024 ? 100 : 1000
+    );
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <header className="fixed top-5 w-full z-10 text-palette-2 px-5">
-      <div className="flex justify-center lg:justify-between items-center py-5 px-14 bg-palette-1 rounded-[20px]">
+      <div
+        className="flex justify-center lg:justify-between items-center py-5 px-14 bg-palette-1 rounded-[20px] transition-all"
+        ref={headerElement}
+      >
         <Link href="/" className="font-mono text-2xl">
           River van Uffelen
         </Link>
