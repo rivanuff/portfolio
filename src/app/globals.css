@@ -48,6 +48,7 @@
   --color-palette-4: #00bfff;
   --color-palette-5: #0b001a;
   --color-palette-6: #a3c2db;
+  --color-palette-7: #003466;
 
   --shadow-card: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
 
@@ -56,6 +57,7 @@
   --radius-sm: calc(var(--radius) - 4px);
 
   --animate-carousel-vertical: carousel-vertical 30s linear infinite;
+  --animate-pulse-live: pulse-live 2s infinite;
 
   @keyframes carousel-vertical {
     0% {
@@ -63,6 +65,16 @@
     }
     100% {
       transform: translateY(-50%);
+    }
+  }
+
+  @keyframes pulse-live {
+    0% {
+      box-shadow: 0 0 0 0px var(--color-red-600);
+    }
+
+    100% {
+      box-shadow: 0 0 0 8px rgba(0, 0, 0, 0);
     }
   }
 }

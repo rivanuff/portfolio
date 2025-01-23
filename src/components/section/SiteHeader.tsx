@@ -24,38 +24,9 @@ export default function SiteHeader() {
     },
   ];
 
-  useEffect(() => {
-    const handleScroll = debounce(
-      () => {
-        if (headerElement.current) {
-          const classes = [
-            "shadow-card",
-            "lg:shadow-none",
-            "shadow-palette-2",
-            "scale-[102.5%]",
-            "lg:scale-100",
-          ];
-
-          if (window.scrollY > 0) {
-            headerElement.current.classList.add(...classes);
-          } else {
-            headerElement.current.classList.remove(...classes);
-          }
-        }
-      },
-      window.screen.width < 1024 ? 100 : 1000
-    );
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
-    <header className="fixed top-5 w-full z-10 text-palette-2 px-5">
-      <div
+    <header className="absolute lg:fixed top-5 w-full z-10 text-palette-2 px-5 lg:px-10">
+      <nav
         className="flex justify-center lg:justify-between items-center py-5 px-14 bg-palette-1 rounded-[20px] transition-all"
         ref={headerElement}
       >
@@ -111,7 +82,7 @@ export default function SiteHeader() {
             </svg>
           </div>
         </button>
-      </div>
+      </nav>
     </header>
   );
 }
