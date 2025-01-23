@@ -24,8 +24,31 @@ export default function SiteHeader() {
     },
   ];
 
+  useEffect(() => {
+    const handleScroll = debounce(
+      () => {
+        if (headerElement.current) {
+          const classes = ["shadow-card", "lg:shadow-none", "shadow-palette-2"];
+
+          if (window.scrollY > 0) {
+            headerElement.current.classList.add(...classes);
+          } else {
+            headerElement.current.classList.remove(...classes);
+          }
+        }
+      },
+      window.screen.width < 1024 ? 1 : 1000
+    );
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="absolute lg:fixed top-5 w-full z-10 text-palette-2 px-5 lg:px-10">
+    <header className="fixed top-5 w-full z-10 text-palette-2 px-5 lg:px-10">
       <nav
         className="flex justify-center lg:justify-between items-center py-5 px-14 bg-palette-1 rounded-[20px] transition-all"
         ref={headerElement}
