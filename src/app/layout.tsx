@@ -29,10 +29,11 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
-      <body
-        className={`${montserrat.variable} ${inconsolata.variable} antialiased`}
-      >
+    <html
+      lang={locale}
+      className={`${montserrat.variable} ${inconsolata.variable} antialiased`}
+    >
+      <body>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

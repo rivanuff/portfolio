@@ -92,7 +92,7 @@ export default function SiteHeader() {
           ))}
         </ul>
 
-        <button className="hidden lg:inline-block uppercase font-medium rounded-full p-0.5 bg-gradient-to-r from-palette-4 to-palette-3 overflow-hidden shadow-md shadow-palette-3/25">
+        <button className="hidden lg:inline-block uppercase font-medium rounded-full p-0.5 bg-linear-to-r from-palette-4 to-palette-3 overflow-hidden shadow-md shadow-palette-3/25">
           <div className="flex items-center gap-x-1 py-2 px-4 bg-palette-1 rounded-full">
             {t("cta")}
             <svg
