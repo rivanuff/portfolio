@@ -31,7 +31,7 @@ export default function HomeFooter() {
         src="/images/lets-talk.png"
         width={134}
         height={134}
-        alt="Icon calling visitor to contact me"
+        alt="Icon calling you out to contact me"
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-center justify-center lg:justify-between w-full">
