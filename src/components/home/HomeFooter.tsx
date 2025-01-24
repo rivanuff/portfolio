@@ -1,9 +1,7 @@
-"use client";
-
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import LiveClock from "../ui/live-clock";
 
 export default function HomeFooter() {
   const t = useTranslations("home.footer");
@@ -25,14 +23,14 @@ export default function HomeFooter() {
 
   return (
     <footer className="bg-palette-1 p-10 pt-10 rounded-[20px] flex flex-col items-center gap-y-12">
-      <h2 className="text-3xl lg:text-[56px] xl:text-[100px] max-w-5xl text-center">
+      <h2 className="text-4xl lg:text-[56px] xl:text-[100px] max-w-5xl text-center">
         {t("title")}
       </h2>
 
       <Image
         src="/images/lets-talk.png"
         width={134}
-        height={136}
+        height={134}
         alt="Icon calling visitor to contact me"
       />
 
@@ -76,32 +74,4 @@ export default function HomeFooter() {
       </div>
     </footer>
   );
-}
-
-function LiveClock({ className }: React.HTMLAttributes<HTMLDivElement>) {
-  const [currentTime, setCurrentTime] = useState("");
-
-  useEffect(() => {
-    const formatTime = () => {
-      const now = new Date();
-      const day = String(now.getDate()).padStart(2, "0");
-      const month = String(now.getMonth() + 1).padStart(2, "0");
-      const year = String(now.getFullYear()).slice(-2);
-      const hours = String(now.getHours()).padStart(2, "0");
-      const minutes = String(now.getMinutes()).padStart(2, "0");
-      const seconds = String(now.getSeconds()).padStart(2, "0");
-
-      return `${day}/${month}/${year} - ${hours}:${minutes}:${seconds}`;
-    };
-
-    // Update the time every second
-    const intervalId = setInterval(() => {
-      setCurrentTime(formatTime());
-    }, 1000);
-
-    // Clean up the interval when the component unmounts
-    return () => clearInterval(intervalId);
-  }, []);
-
-  return <time className={className}>{currentTime}</time>;
 }

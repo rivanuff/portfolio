@@ -7,7 +7,8 @@ import { useEffect, useRef } from "react";
 
 export default function SiteHeader() {
   const t = useTranslations("header");
-  const headerElement = useRef<HTMLDivElement>(null);
+  const headerElement = useRef<HTMLElement>(null);
+  const navElement = useRef<HTMLElement>(null);
 
   const navItems = [
     {
@@ -25,20 +26,20 @@ export default function SiteHeader() {
   ];
 
   useEffect(() => {
-    const handleScroll = debounce(
-      () => {
-        if (headerElement.current) {
-          const classes = ["shadow-card", "lg:shadow-none", "shadow-palette-2"];
+    const handleScroll = debounce(() => {
+      if (navElement.current && headerElement.current) {
+        const headerClasses = ["max-lg:!px-0", "!top-0"];
+        const navClasses = ["max-lg:rounded-t-none"];
 
-          if (window.scrollY > 0) {
-            headerElement.current.classList.add(...classes);
-          } else {
-            headerElement.current.classList.remove(...classes);
-          }
+        if (window.scrollY > 20) {
+          headerElement.current.classList.add(...headerClasses);
+          navElement.current.classList.add(...navClasses);
+        } else {
+          headerElement.current.classList.remove(...headerClasses);
+          navElement.current.classList.remove(...navClasses);
         }
-      },
-      window.screen.width < 1024 ? 1 : 1000
-    );
+      }
+    }, 1);
 
     window.addEventListener("scroll", handleScroll);
 
@@ -48,10 +49,13 @@ export default function SiteHeader() {
   }, []);
 
   return (
-    <header className="fixed top-5 w-full z-10 text-palette-2 px-5 lg:px-10">
+    <header
+      className="fixed top-5 w-full z-10 text-palette-2 px-5 lg:px-10 transition-all"
+      ref={headerElement}
+    >
       <nav
         className="flex justify-center lg:justify-between items-center py-5 px-14 bg-palette-1 rounded-[20px] transition-all"
-        ref={headerElement}
+        ref={navElement}
       >
         <Link href="/" className="font-mono text-2xl">
           River van Uffelen
