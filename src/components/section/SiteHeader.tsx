@@ -28,8 +28,8 @@ export default function SiteHeader() {
   useEffect(() => {
     const handleScroll = debounce(() => {
       if (navElement.current && headerElement.current) {
-        const headerClasses = ["max-lg:!px-0", "!top-0"];
-        const navClasses = ["max-lg:rounded-t-none"];
+        const headerClasses = ["!top-0"];
+        const navClasses = ["rounded-t-none"];
 
         if (window.scrollY > 20) {
           headerElement.current.classList.add(...headerClasses);
@@ -50,7 +50,7 @@ export default function SiteHeader() {
 
   return (
     <header
-      className="fixed top-5 w-full z-10 text-palette-2 px-5 lg:px-10 transition-all"
+      className="fixed top-5 w-full z-10 text-palette-2 px-5 transition-all"
       ref={headerElement}
     >
       <nav
