@@ -29,7 +29,7 @@ export default function SiteHeader() {
     const handleScroll = debounce(() => {
       if (navElement.current && headerElement.current) {
         const headerClasses = ["!top-0"];
-        const navClasses = ["rounded-t-none"];
+        const navClasses = ["rounded-t-none", "shadow-sm", "shadow-black/50"];
 
         if (window.scrollY > 20) {
           headerElement.current.classList.add(...headerClasses);
