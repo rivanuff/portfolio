@@ -23,7 +23,7 @@ export default function HomeFooter() {
 
   return (
     <footer className="bg-palette-1 p-10 pt-10 rounded-[20px] flex flex-col items-center gap-y-12">
-      <h2 className="text-4xl lg:text-[56px] xl:text-[100px] max-w-5xl text-center">
+      <h2 className="font-medium text-4xl lg:text-[56px] xl:text-[100px] max-w-5xl text-center">
         {t("title")}
       </h2>
 
