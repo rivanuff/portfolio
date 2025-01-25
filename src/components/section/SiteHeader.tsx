@@ -26,7 +26,7 @@ export default function SiteHeader() {
   ];
 
   useEffect(() => {
-    const handleScroll = debounce(() => {
+    const headerScrollEffect = debounce(() => {
       if (navElement.current && headerElement.current) {
         const headerClasses = ["!top-0"];
         const navClasses = ["rounded-t-none", "shadow-sm", "shadow-black/50"];
@@ -41,10 +41,13 @@ export default function SiteHeader() {
       }
     }, 1);
 
-    window.addEventListener("scroll", handleScroll);
+    // Call on component load to handle saved scroll positions
+    headerScrollEffect();
+
+    window.addEventListener("scroll", headerScrollEffect);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", headerScrollEffect);
     };
   }, []);
 
