@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Inconsolata } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -38,6 +39,7 @@ export default async function RootLayout({
           {children}
         </NextIntlClientProvider>
       </body>
+      <GoogleAnalytics gaId="G-HCT2WS80Q0" />
     </html>
   );
 }
