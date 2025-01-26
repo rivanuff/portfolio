@@ -35,7 +35,7 @@ export default function HomeFooter() {
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-center justify-center lg:justify-between w-full">
-        <LiveClock className="text-center lg:text-left" />
+        <LiveClock className="text-center lg:text-left font-mono" />
 
         <nav>
           <ul className="flex flex-col lg:flex-row justify-center items-center gap-x-6">
