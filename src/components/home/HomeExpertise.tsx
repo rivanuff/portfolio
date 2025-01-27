@@ -1,4 +1,4 @@
-import { shuffleArray } from "@/lib/utils";
+import { cn, shuffleArray } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 
 export default function HomeExpertise() {
@@ -40,9 +40,10 @@ export default function HomeExpertise() {
           {randomizedLists.map((list, listIndex) => (
             <ul
               key={listIndex}
-              className={`animate-carousel-vertical ${
-                listIndex % 2 === 1 ? "direction-reverse" : ""
-              } space-y-4`}
+              className={cn(
+                "animate-carousel-vertical space-y-4",
+                listIndex % 2 == 1 && "direction-reverse"
+              )}
               aria-hidden={listIndex !== 0}
             >
               {list.concat(list).map((item, index) => (
