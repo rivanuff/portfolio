@@ -5,7 +5,7 @@ export default function HomeIntro() {
   const t = useTranslations("home.intro");
 
   return (
-    <div className="bg-palette-1 p-10 pt-24 rounded-[20px]">
+    <section className="bg-palette-1 p-10 pt-24 rounded-[20px]">
       <div className="mb-16 mt-36">
         <h1 className="text-4xl lg:text-[56px] xl:text-[100px] max-w-4xl font-medium leading-none">
           {t.rich("title", {
@@ -24,15 +24,15 @@ export default function HomeIntro() {
           {t("status")}
         </p>
 
-        <button className="hidden md:inline-block">
+        <a className="hidden md:inline-block" href="#expertise">
           <Image
             src="/images/scroll-down.png"
             alt="Icon implying the page can be scrolled down"
             height={106}
             width={106}
           />
-        </button>
+        </a>
       </div>
-    </div>
+    </section>
   );
 }

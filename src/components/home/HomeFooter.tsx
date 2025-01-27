@@ -27,12 +27,14 @@ export default function HomeFooter() {
         {t("title")}
       </h2>
 
-      <Image
-        src="/images/lets-talk.png"
-        width={134}
-        height={134}
-        alt="Icon calling you out to contact me"
-      />
+      <a href="mailto:hi@rivervanuffelen.com">
+        <Image
+          src="/images/lets-talk.png"
+          width={134}
+          height={134}
+          alt="Icon calling you out to contact me"
+        />
+      </a>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-center justify-center lg:justify-between w-full">
         <LiveClock className="text-center lg:text-left font-mono" />
