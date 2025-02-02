@@ -1,0 +1,50 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["*"],
+      "groupName": "All Dependencies",
+      "schedule": ["weekly"]
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "groupName": "Production Dependencies",
+      "schedule": ["weekly"]
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "groupName": "Development Dependencies",
+      "schedule": ["weekly"]
+    },
+    {
+      "matchPackageNames": ["next", "react", "react-dom"],
+      "groupName": "Core Framework Packages",
+      "schedule": ["weekly"],
+      "separateMinorPatch": true
+    },
+    {
+      "matchPackagePatterns": ["eslint*"],
+      "groupName": "ESLint and Linters",
+      "schedule": ["monthly"]
+    },
+    {
+      "matchPackagePatterns": ["tailwind*"],
+      "groupName": "TailwindCSS Packages",
+      "schedule": ["monthly"]
+    },
+    {
+      "matchPackagePatterns": ["typescript"],
+      "groupName": "TypeScript Updates",
+      "schedule": ["monthly"]
+    }
+  ],
+  "npm": {
+    "enabled": true
+  },
+  "ignoreDeps": [],
+  "automerge": false,
+  "prConcurrentLimit": 5,
+  "prHourlyLimit": 2,
+  "rebaseWhen": "behind-base-branch"
+}
