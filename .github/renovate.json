@@ -1,50 +1,35 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
+  "extends": ["config:base", "schedule:weekly"],
+  "timezone": "Europe/Amsterdam",
+  "baseBranches": ["main"],
+  "commitMessagePrefix": "⬆️ Bump: ",
+  "labels": ["dependencies", "renovate"],
   "packageRules": [
     {
-      "matchPackagePatterns": ["*"],
-      "groupName": "All Dependencies",
-      "schedule": ["weekly"]
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "automergeType": "branch"
     },
     {
-      "matchDepTypes": ["dependencies"],
-      "groupName": "Production Dependencies",
-      "schedule": ["weekly"]
+      "matchUpdateTypes": ["pin"],
+      "automerge": true
     },
     {
-      "matchDepTypes": ["devDependencies"],
-      "groupName": "Development Dependencies",
-      "schedule": ["weekly"]
+      "matchPackagePatterns": ["eslint", "prettier", "stylelint"],
+      "groupName": "Linting tools"
     },
     {
-      "matchPackageNames": ["next", "react", "react-dom"],
-      "groupName": "Core Framework Packages",
-      "schedule": ["weekly"],
-      "separateMinorPatch": true
+      "matchPackagePatterns": ["@types/", "typescript"],
+      "groupName": "TypeScript dependencies"
     },
     {
-      "matchPackagePatterns": ["eslint*"],
-      "groupName": "ESLint and Linters",
-      "schedule": ["monthly"]
+      "matchPackagePatterns": ["next", "react", "react-dom"],
+      "groupName": "Core framework dependencies"
     },
     {
-      "matchPackagePatterns": ["tailwind*"],
-      "groupName": "TailwindCSS Packages",
-      "schedule": ["monthly"]
-    },
-    {
-      "matchPackagePatterns": ["typescript"],
-      "groupName": "TypeScript Updates",
-      "schedule": ["monthly"]
+      "matchPackagePatterns": ["@radix-ui/"],
+      "groupName": "Radix UI dependencies"
     }
   ],
-  "npm": {
-    "enabled": true
-  },
-  "ignoreDeps": [],
-  "automerge": false,
-  "prConcurrentLimit": 5,
-  "prHourlyLimit": 2,
-  "rebaseWhen": "behind-base-branch"
+  "schedule": ["every weekend"]
 }
