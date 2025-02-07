@@ -3,6 +3,7 @@ import { Montserrat, Inconsolata } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { ReactLenis } from "lenis/react";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -30,16 +31,18 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html
-      lang={locale}
-      className={`${montserrat.variable} ${inconsolata.variable} antialiased`}
-    >
-      <body>
-        <NextIntlClientProvider messages={messages}>
-          {children}
-        </NextIntlClientProvider>
-      </body>
-      <GoogleAnalytics gaId="G-HCT2WS80Q0" />
-    </html>
+    <ReactLenis root>
+      <html
+        lang={locale}
+        className={`${montserrat.variable} ${inconsolata.variable} antialiased`}
+      >
+        <body>
+          <NextIntlClientProvider messages={messages}>
+            {children}
+          </NextIntlClientProvider>
+        </body>
+        <GoogleAnalytics gaId="G-HCT2WS80Q0" />
+      </html>
+    </ReactLenis>
   );
 }
