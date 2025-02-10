@@ -1,5 +1,4 @@
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 
 export default function HomeIntro() {
   const t = useTranslations("home.intro");
