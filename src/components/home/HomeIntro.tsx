@@ -6,7 +6,7 @@ export default function HomeIntro() {
 
   return (
     <section className="bg-palette-1 p-10 pt-24 rounded-[20px]">
-      <div className="mb-16 mt-36">
+      <div className="my-36">
         <h1 className="text-4xl lg:text-[56px] xl:text-[100px] max-w-4xl font-medium leading-none">
           {t.rich("title", {
             gradient: (chunks) => (
@@ -19,20 +19,9 @@ export default function HomeIntro() {
         <p className="text-lg lg:text-2xl mt-6">{t("description")}</p>
       </div>
 
-      <div className="flex justify-between items-end">
-        <p className="flex text-sm lg:text-base items-center before:mr-3 before:animate-pulse-live before:size-2 before:shrink-0 before:bg-red-600 before:rounded-full">
-          {t("status")}
-        </p>
-
-        <a className="hidden md:inline-block" href="#expertise">
-          <Image
-            src="/images/scroll-down.png"
-            alt="Icon implying the page can be scrolled down"
-            height={106}
-            width={106}
-          />
-        </a>
-      </div>
+      <p className="flex text-sm lg:text-base items-center before:mr-3 before:animate-pulse-live before:size-2 before:shrink-0 before:bg-red-600 before:rounded-full">
+        {t("status")}
+      </p>
     </section>
   );
 }

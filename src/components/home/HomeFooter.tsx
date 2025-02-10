@@ -27,7 +27,10 @@ export default function HomeFooter() {
         {t("title")}
       </h2>
 
-      <a href="mailto:hi@rivervanuffelen.com">
+      <a
+        href="mailto:hi@rivervanuffelen.com"
+        className="transition-transform hover:scale-110 duration-500"
+      >
         <Image
           src="/images/lets-talk.png"
           width={134}
