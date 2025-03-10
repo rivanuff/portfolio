@@ -18,8 +18,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       lenis:
-        specifier: 1.1.22
-        version: 1.1.22(react@19.0.0)
+        specifier: 1.2.3
+        version: 1.2.3(react@19.0.0)
       lucide-react:
         specifier: 0.479.0
         version: 0.479.0(react@19.0.0)
@@ -1147,8 +1147,8 @@ packages:
     resolution: {integrity: sha512-MbjN408fEndfiQXbFQ1vnd+1NoLDsnQW41410oQBXiyXDMYH5z505juWa4KUE1LqxRC7DgOgZDbKLxHIwm27hA==}
     engines: {node: '>=0.10'}
 
-  lenis@1.1.22:
-    resolution: {integrity: sha512-mHNfRSKixzy/QWfo0viB7qfTOqfm5IRTa0e3A1upcsAYFJdVTqUSqifAJccNx5Vtv0FZ5xgqD2MW0VdCjBuiig==}
+  lenis@1.2.3:
+    resolution: {integrity: sha512-H3VUn62jvQPfyxGW2F0STJPhP1VzX5r05KtiZ0uxHYD9xtbfTvj2eX/Km26+x13zlaKfHacEe1DTC3ouFrxw+g==}
     peerDependencies:
       '@nuxt/kit': '>=3.0.0'
       react: '>=17.0.0'
@@ -2920,7 +2920,7 @@ snapshots:
     dependencies:
       language-subtag-registry: 0.3.23
 
-  lenis@1.1.22(react@19.0.0):
+  lenis@1.2.3(react@19.0.0):
     optionalDependencies:
       react: 19.0.0
 
