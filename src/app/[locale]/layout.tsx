@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { Montserrat, Inconsolata } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getMessages } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { ReactLenis } from "lenis/react";
-import "./globals.css";
+import "../globals.css";
+import { notFound } from "next/navigation";
+import { hasLocale } from "next-intl";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -24,17 +27,26 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
-  const locale = await getLocale();
+  const { locale } = await params;
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
   const messages = await getMessages();
+
+  setRequestLocale(locale);
 
   return (
     <ReactLenis root>
       <html
         lang={locale}
-        className={`${montserrat.variable} ${inconsolata.variable} antialiased`}
+        className={`${montserrat.variable} ${inconsolata.variable}`}
       >
         <body>
           <NextIntlClientProvider messages={messages}>

@@ -1,6 +1,7 @@
 {
   "header": {
-    "cta": "Let's talk"
+    "cta": "Let's talk",
+    "resume": "Résumé"
   },
   "home": {
     "intro": {
@@ -13,7 +14,8 @@
     },
     "footer": {
       "title": "Interested in working together?",
-      "freelance": "Available for freelance work"
+      "freelance": "Available for freelance work",
+      "resume": "Résumé"
     }
   }
 }

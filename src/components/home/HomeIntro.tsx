@@ -6,12 +6,15 @@ export default function HomeIntro() {
   return (
     <section className="bg-palette-1 p-10 pt-24 rounded-[20px]">
       <div className="my-36">
-        <h1 className="text-4xl lg:text-[56px] xl:text-[100px] max-w-4xl font-medium leading-none">
+        <h1 className="text-4xl lg:text-[56px] xl:text-[100px] max-w-6xl font-medium leading-none">
           {t.rich("title", {
             gradient: (chunks) => (
-              <span className="bg-gradient-to-r from-palette-7 to-palette-4 inline-block text-transparent bg-clip-text">
-                {chunks}
-              </span>
+              <>
+                <span className="bg-gradient-to-r from-palette-7 to-palette-4 inline-block text-transparent bg-clip-text">
+                  {chunks}
+                </span>
+                <br></br>
+              </>
             ),
           })}
         </h1>

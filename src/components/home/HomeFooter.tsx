@@ -12,7 +12,7 @@ export default function HomeFooter() {
       url: "https://www.linkedin.com/in/rivervanuffelen/",
     },
     {
-      title: "CV",
+      title: t("resume"),
       url: "/cv.pdf",
     },
     {

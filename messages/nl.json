@@ -1,17 +1,21 @@
 {
   "header": {
-    "cta": "Let's talk"
+    "cta": "Let's talk",
+    "resume": "CV"
   },
   "home": {
-    "title": "Ik ben een <gradient>full-stack</gradient> web developer",
-    "description": "Ik vind content maken daarnaast ook leuk :)",
-    "status": "Ik werk momenteel part-time whilst terwijl ik een MSc in Software Engineering volg"
-  },
-  "expertise": {
-    "title": "Expertise"
-  },
-  "footer": {
-    "title": "Geinteresseerd in samenwerking?",
-    "freelance": "Beschikbaar voor freelance werk"
+    "intro": {
+      "title": "Ik ben een <gradient>full-stack</gradient> web developer",
+      "description": "Ik vind content maken daarnaast ook leuk :)",
+      "status": "Ik werk momenteel part-time terwijl ik nieuwe technologieën aan het leren ben (Docker, etc.)"
+    },
+    "expertise": {
+      "title": "Expertise"
+    },
+    "footer": {
+      "title": "Geinteresseerd in samenwerking?",
+      "freelance": "Beschikbaar voor freelance werk",
+      "resume": "CV"
+    }
   }
 }
