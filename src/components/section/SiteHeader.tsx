@@ -57,7 +57,7 @@ export default function SiteHeader() {
       ref={headerElement}
     >
       <nav
-        className="flex justify-center lg:justify-between items-center py-5 px-14 bg-palette-1 rounded-[20px] transition-all"
+        className="flex justify-center lg:justify-between items-center py-5 px-10 bg-palette-1 rounded-[20px] transition-all"
         ref={navElement}
       >
         <Link href="/" className="font-mono text-2xl">
